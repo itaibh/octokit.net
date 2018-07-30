@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using NSubstitute;
 using Octokit.Reactive;
@@ -90,7 +89,7 @@ namespace Octokit.Tests.Clients
                 var client = new ObservableCheckSuitesClient(gitHubClient);
 
                 client.GetAllForReference(1, "ref");
-                
+
                 connection.Received().Get<List<CheckSuitesResponse>>(
                     Arg.Is<Uri>(u => u.ToString() == "repositories/1/commits/ref/check-suites"),
                     Args.EmptyDictionary,
