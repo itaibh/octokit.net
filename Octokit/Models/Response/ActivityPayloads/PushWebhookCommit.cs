@@ -6,7 +6,7 @@ using System.Globalization;
 namespace Octokit
 {
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public class CommitPayload
+    public class PushWebhookCommit
     {
         public string Id { get; protected set; }
 

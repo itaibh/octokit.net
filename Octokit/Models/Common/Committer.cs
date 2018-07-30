@@ -43,24 +43,7 @@ namespace Octokit
             Email = email;
             Date = date;
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Committer"/> class.
-        /// </summary>
-        /// <param name="nodeId">The GraphQL Node Id</param>
-        /// <param name="name">The full name of the author or committer.</param>
-        /// <param name="email">The email.</param>
-        /// <param name="date">The date.</param>
-        /// <param name="username">The committer username.</param>
-        public Committer(string nodeId, string name, string email, DateTimeOffset date, string username)
-        {
-            NodeId = nodeId;
-            Name = name;
-            Email = email;
-            Date = date;
-            Username = username;
-        }
-
+        
         /// <summary>
         /// GraphQL Node Id
         /// </summary>
@@ -90,17 +73,9 @@ namespace Octokit
         /// </value>
         public DateTimeOffset Date { get; protected set; }
 
-        /// <summary>
-        /// Gets the username of the author or committer.
-        /// </summary>
-        /// <value>
-        /// The username.
-        /// </value>
-        public string Username { get; protected set; }
-
-        internal string DebuggerDisplay
+        internal virtual string DebuggerDisplay
         {
-            get { return string.Format(CultureInfo.InvariantCulture, "Name: {0} Email: {1} Date: {2}; Username: {3}", Name, Email, Date, Username); }
+            get { return string.Format(CultureInfo.InvariantCulture, "Name: {0} Email: {1} Date: {2}", Name, Email, Date); }
         }
     }
 }
