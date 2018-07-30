@@ -281,6 +281,11 @@ namespace Octokit
             return "notifications/threads/{0}/subscription".FormatUri(id);
         }
 
+        public static Uri AccessTokens(int installationId)
+        {
+            return "installations/{0}/access_tokens".FormatUri(installationId);
+        }
+
         /// <summary>
         /// Returns the <see cref="Uri"/> for creating a new installation token.
         /// </summary>
